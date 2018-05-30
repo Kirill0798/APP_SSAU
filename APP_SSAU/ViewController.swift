@@ -8,17 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+ class ViewController: UIViewController {
+    @IBOutlet weak var loginLabel: UITextField!
+    @IBOutlet weak var passwordLabel: UITextField!
+    @IBAction func enter(_ sender: Any) {
+    }
+    var user:[User]? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        user = CoreDataHandler.fetchObject()
+//        if user![0].login != nil && user![0].password != nil{
+//            loginLabel.text = "\(user![0].login!)"
+//            passwordLabel.text = "\(user![0].password!)"
+//        }
+        print(user![0].login)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 
 }
