@@ -185,8 +185,7 @@
 				ED6FE19720B7637100CD3850 /* Toast.xib */,
 				ED6FE19820B7637100CD3850 /* Toast.swift */,
 			);
-			name = ToestMessage;
-			path = ../../../Desktop/ToestMessage;
+			path = ToestMessage;
 			sourceTree = "<group>";
 		};
 		ED6FE1D920B782A700CD3850 /* ServerResponse */ = {
