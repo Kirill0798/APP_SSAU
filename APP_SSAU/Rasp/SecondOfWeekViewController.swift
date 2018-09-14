@@ -51,8 +51,8 @@ class SecondOfWeekViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     func downloadJSON(completed: @escaping () -> ()){
-        let url = URL( string: "http://25.54.246.29:4567/getTimeTable?my_id=1&token=fe059be107aa357b5d6d19829a4a6953")
-        URLSession.shared.dataTask(with: url!){(data, response, err) in
+        guard let url = URL( string: "http://192.168.43.113:4567/getTimeTable?token=\((UserDefaults.standard.string(forKey: "token"))!)") else {return}
+        URLSession.shared.dataTask(with: url){(data, response, err) in
             guard let data = data else { return }
             do{
                 let decoder = JSONDecoder()

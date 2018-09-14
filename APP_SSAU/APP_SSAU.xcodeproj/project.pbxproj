@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		ED0509B520B45CCC00471E34 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0509B420B45CCC00471E34 /* MessageTableViewCell.swift */; };
 		ED0509B720B45CDC00471E34 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0509B620B45CDC00471E34 /* MessageViewController.swift */; };
-		ED07F8E620BF5C9F007581D5 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07F8E520BF5C9F007581D5 /* TabViewController.swift */; };
 		ED0FE3BB2084D4EF00414D7C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED0FE3B92084D4EF00414D7C /* Model.xcdatamodeld */; };
 		ED0FE3C52084DF9200414D7C /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FE3C42084DF9200414D7C /* CoreDataHelper.swift */; };
 		ED0FE3C8208B7BE100414D7C /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FE3C6208B7BE100414D7C /* User+CoreDataClass.swift */; };
 		ED0FE3C9208B7BE100414D7C /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0FE3C7208B7BE100414D7C /* User+CoreDataProperties.swift */; };
 		ED1D4993208FB56800EFCCAC /* Rasp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D4992208FB56800EFCCAC /* Rasp.swift */; };
+		ED1D499720930F1B00EFCCAC /* logo_v3.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1D499620930F1B00EFCCAC /* logo_v3.png */; };
 		ED1D499920931AC000EFCCAC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D499820931AC000EFCCAC /* RegistrationViewController.swift */; };
-		ED4D1293214AF6BD00B75653 /* logo_v3.png in Resources */ = {isa = PBXBuildFile; fileRef = ED4D1292214AF6BD00B75653 /* logo_v3.png */; };
 		ED5067AB20B17BD1001C154F /* FirstOfWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5067AA20B17BD1001C154F /* FirstOfWeekViewController.swift */; };
 		ED5067AD20B1CA64001C154F /* LessonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5067AC20B1CA64001C154F /* LessonsViewController.swift */; };
 		ED5067AF20B1CB8B001C154F /* LessonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5067AE20B1CB8B001C154F /* LessonTableViewCell.swift */; };
@@ -40,6 +39,10 @@
 		EDDB5A06207A6E020031C6EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDDB5A04207A6E020031C6EF /* LaunchScreen.storyboard */; };
 		EDDB5A11207A6E020031C6EF /* APP_SSAUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB5A10207A6E020031C6EF /* APP_SSAUTests.swift */; };
 		EDDB5A1C207A6E020031C6EF /* APP_SSAUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB5A1B207A6E020031C6EF /* APP_SSAUUITests.swift */; };
+		EDDB5A2A207A745A0031C6EF /* FirstWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB5A29207A745A0031C6EF /* FirstWeekViewController.swift */; };
+		EDDB5A2E207A75B50031C6EF /* FirstDayItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB5A2D207A75B50031C6EF /* FirstDayItemCell.swift */; };
+		EDDB5A36207A85020031C6EF /* FirstLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB5A35207A85020031C6EF /* FirstLessonViewController.swift */; };
+		EDDB5A3A207A86C90031C6EF /* FirstLessonItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB5A39207A86C90031C6EF /* FirstLessonItemCell.swift */; };
 		EDDB5A3E20809DB30031C6EF /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB5A3D20809DB30031C6EF /* AddController.swift */; };
 		EDDB5A4020809E960031C6EF /* NotepadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB5A3F20809E960031C6EF /* NotepadController.swift */; };
 		EDDB5A4220809F0C0031C6EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB5A4120809F0C0031C6EF /* Constants.swift */; };
@@ -65,14 +68,13 @@
 /* Begin PBXFileReference section */
 		ED0509B420B45CCC00471E34 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		ED0509B620B45CDC00471E34 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		ED07F8E520BF5C9F007581D5 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		ED0FE3BA2084D4EF00414D7C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		ED0FE3C42084DF9200414D7C /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		ED0FE3C6208B7BE100414D7C /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ED0FE3C7208B7BE100414D7C /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED1D4992208FB56800EFCCAC /* Rasp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rasp.swift; sourceTree = "<group>"; };
+		ED1D499620930F1B00EFCCAC /* logo_v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_v3.png; path = ../../../../Downloads/logo_v3.png; sourceTree = "<group>"; };
 		ED1D499820931AC000EFCCAC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		ED4D1292214AF6BD00B75653 /* logo_v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_v3.png; sourceTree = "<group>"; };
 		ED5067AA20B17BD1001C154F /* FirstOfWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOfWeekViewController.swift; sourceTree = "<group>"; };
 		ED5067AC20B1CA64001C154F /* LessonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewController.swift; sourceTree = "<group>"; };
 		ED5067AE20B1CB8B001C154F /* LessonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTableViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +104,10 @@
 		EDDB5A17207A6E020031C6EF /* APP_SSAUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APP_SSAUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDB5A1B207A6E020031C6EF /* APP_SSAUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APP_SSAUUITests.swift; sourceTree = "<group>"; };
 		EDDB5A1D207A6E020031C6EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDDB5A29207A745A0031C6EF /* FirstWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWeekViewController.swift; sourceTree = "<group>"; };
+		EDDB5A2D207A75B50031C6EF /* FirstDayItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDayItemCell.swift; sourceTree = "<group>"; };
+		EDDB5A35207A85020031C6EF /* FirstLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLessonViewController.swift; sourceTree = "<group>"; };
+		EDDB5A39207A86C90031C6EF /* FirstLessonItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLessonItemCell.swift; sourceTree = "<group>"; };
 		EDDB5A3D20809DB30031C6EF /* AddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
 		EDDB5A3F20809E960031C6EF /* NotepadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadController.swift; sourceTree = "<group>"; };
 		EDDB5A4120809F0C0031C6EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -222,7 +228,7 @@
 		EDDB59FA207A6E010031C6EF /* APP_SSAU */ = {
 			isa = PBXGroup;
 			children = (
-				ED4D1292214AF6BD00B75653 /* logo_v3.png */,
+				ED1D499620930F1B00EFCCAC /* logo_v3.png */,
 				ED6FE14C20B7237500CD3850 /* Notepad */,
 				ED0509B320B45CB400471E34 /* Message */,
 				ED5067A920B17B58001C154F /* Rasp */,
@@ -230,15 +236,18 @@
 				EDDB59FB207A6E010031C6EF /* AppDelegate.swift */,
 				ED6FE1E220B7B01C00CD3850 /* CoreDataHandler.swift */,
 				EDDB59FD207A6E010031C6EF /* ViewController.swift */,
+				EDDB5A35207A85020031C6EF /* FirstLessonViewController.swift */,
 				ED0FE3B92084D4EF00414D7C /* Model.xcdatamodeld */,
+				EDDB5A29207A745A0031C6EF /* FirstWeekViewController.swift */,
 				ED1D499820931AC000EFCCAC /* RegistrationViewController.swift */,
 				EDDB59FF207A6E010031C6EF /* Main.storyboard */,
 				EDDB5A02207A6E020031C6EF /* Assets.xcassets */,
 				EDDB5A04207A6E020031C6EF /* LaunchScreen.storyboard */,
 				EDDB5A07207A6E020031C6EF /* Info.plist */,
+				EDDB5A2D207A75B50031C6EF /* FirstDayItemCell.swift */,
+				EDDB5A39207A86C90031C6EF /* FirstLessonItemCell.swift */,
 				EDDB5A4120809F0C0031C6EF /* Constants.swift */,
 				ED6FE1E620B8049400CD3850 /* Student.swift */,
-				ED07F8E520BF5C9F007581D5 /* TabViewController.swift */,
 			);
 			path = APP_SSAU;
 			sourceTree = "<group>";
@@ -368,8 +377,8 @@
 				EDDB5A06207A6E020031C6EF /* LaunchScreen.storyboard in Resources */,
 				EDDB5A03207A6E020031C6EF /* Assets.xcassets in Resources */,
 				ED6FE19B20B7637100CD3850 /* Toast.xib in Resources */,
-				ED4D1293214AF6BD00B75653 /* logo_v3.png in Resources */,
 				EDDB5A01207A6E010031C6EF /* Main.storyboard in Resources */,
+				ED1D499720930F1B00EFCCAC /* logo_v3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,14 +406,16 @@
 				ED5067AB20B17BD1001C154F /* FirstOfWeekViewController.swift in Sources */,
 				ED1D499920931AC000EFCCAC /* RegistrationViewController.swift in Sources */,
 				ED6FE14E20B7244000CD3850 /* Note.swift in Sources */,
+				EDDB5A3A207A86C90031C6EF /* FirstLessonItemCell.swift in Sources */,
 				ED6FE1DB20B782C400CD3850 /* ServerResponse.swift in Sources */,
 				ED0FE3C52084DF9200414D7C /* CoreDataHelper.swift in Sources */,
-				ED07F8E620BF5C9F007581D5 /* TabViewController.swift in Sources */,
 				ED6FE14B20B499A500CD3850 /* SecondOfWeekViewController.swift in Sources */,
 				ED0FE3BB2084D4EF00414D7C /* Model.xcdatamodeld in Sources */,
 				ED6FE14920B4972E00CD3850 /* RaspPageViewController.swift in Sources */,
 				ED5067AF20B1CB8B001C154F /* LessonTableViewCell.swift in Sources */,
+				EDDB5A2E207A75B50031C6EF /* FirstDayItemCell.swift in Sources */,
 				ED0509B720B45CDC00471E34 /* MessageViewController.swift in Sources */,
+				EDDB5A2A207A745A0031C6EF /* FirstWeekViewController.swift in Sources */,
 				ED6FE1DD20B78AFE00CD3850 /* Message.swift in Sources */,
 				EDDB5A3E20809DB30031C6EF /* AddController.swift in Sources */,
 				ED6FE19C20B7637100CD3850 /* Toast.swift in Sources */,
@@ -423,6 +434,7 @@
 				ED0509B520B45CCC00471E34 /* MessageTableViewCell.swift in Sources */,
 				ED1D4993208FB56800EFCCAC /* Rasp.swift in Sources */,
 				EDDB59FC207A6E010031C6EF /* AppDelegate.swift in Sources */,
+				EDDB5A36207A85020031C6EF /* FirstLessonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

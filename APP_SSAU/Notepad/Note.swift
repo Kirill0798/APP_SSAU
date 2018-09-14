@@ -14,7 +14,7 @@ struct Note: Codable {
 
 struct Response: Codable {
     let group: Group
-    let lesson, text: String
+    let lesson, text, deadline, start: String
 }
 
 struct Group: Codable {

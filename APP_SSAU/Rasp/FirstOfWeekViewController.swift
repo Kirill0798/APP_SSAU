@@ -9,17 +9,20 @@
 import UIKit
 
 class FirstOfWeekViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var rasp = Rasp()
     var array: [String] = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         downloadJSON {
             self.tableView.reloadData()
         }
-    
+        
+    print(UserDefaults.standard.string(forKey: "token"))
     }
 
    
@@ -40,17 +43,19 @@ class FirstOfWeekViewController: UIViewController, UITableViewDelegate, UITableV
         performSegue(withIdentifier: "fromWeekToDay", sender: item)//self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if let destination = segue.destination as? LessonsViewController{
             print(tableView.indexPathForSelectedRow!.row)
             destination.raspDay = rasp.weeks[0].days[(tableView.indexPathForSelectedRow?.row)!]
             destination.title = sender as? String
-            print(rasp.weeks[0].days[(tableView.indexPathForSelectedRow?.row)!])
+            //print(rasp.weeks[0].days[(tableView.indexPathForSelectedRow?.row)!])
            // print(rasp.weeks[0].days[(self.tableView.indexPathForSelectedRow?.row)!])
         }
+        
     }
     func downloadJSON(completed: @escaping () -> ()){
-       let url = URL( string: "http://25.54.246.29:4567/getTimeTable?my_id=1&token=fe059be107aa357b5d6d19829a4a6953")
-        URLSession.shared.dataTask(with: url!){(data, response, err) in
+        guard let url = URL( string: "http://192.168.43.113:4567/getTimeTable?token=\(UserDefaults.standard.string(forKey: "token")!)") else {return}
+        URLSession.shared.dataTask(with: url){(data, response, err) in
             guard let data = data else { return }
             do{
                 let decoder = JSONDecoder()

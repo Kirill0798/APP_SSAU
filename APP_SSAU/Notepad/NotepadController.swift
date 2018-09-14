@@ -25,6 +25,7 @@ class NotepadController: UIViewController, UITableViewDelegate, UITableViewDataS
         downloadJSON {
             self.tableView.reloadData()
         }
+        tableView.refreshControl = refresher
         tableView.dataSource = self
         tableView.delegate = self
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
@@ -38,7 +39,6 @@ class NotepadController: UIViewController, UITableViewDelegate, UITableViewDataS
         downloadJSON {
             self.tableView.reloadData()
         }
-        
         
     }
     @objc
@@ -72,6 +72,12 @@ class NotepadController: UIViewController, UITableViewDelegate, UITableViewDataS
 //            tableView.reloadData()
 //        }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let myAlert = UIAlertController(title: "\(note.response[indexPath.row].text)", message: "создано: \(note.response[indexPath.row].start)\n дедлайн: \(note.response[indexPath.row].deadline)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "oк", style: .default, handler: nil)
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNote"{
         if let destination = segue.destination as? AddController{
@@ -80,9 +86,9 @@ class NotepadController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     func downloadJSON(completed: @escaping() -> ()){
-        print("http://192.168.43.89:4567/getNote?token=fe059be107aa357b5d6d19829a4a6953&lesson=\(disciplineNote!)")
+        //print("http://192.168.43.201:4567/getNote?token=fe059be107aa357b5d6d19829a4a6953&lesson=\(disciplineNote!)")
         let encodedTexts = disciplineNote?.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
-        let myString: String = "http://25.54.246.29:4567/getNote?token=fe059be107aa357b5d6d19829a4a6953&lesson=\(encodedTexts!)"
+        let myString: String = "http://192.168.43.113:4567/getNote?token=\(UserDefaults.standard.string(forKey: "token")!)&lesson=\(encodedTexts!)"
         let url = URL(string: myString)
         URLSession.shared.dataTask(with: url!){(data,response,err) in
             guard let data = data else {return}

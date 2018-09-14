@@ -9,6 +9,9 @@
 import UIKit
 
 class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBAction func loggoutUser(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isUserLogin")
+    }
     lazy var refresher: UIRefreshControl = {
         let refresherControl = UIRefreshControl()
         refresherControl.tintColor = .black
@@ -35,6 +38,12 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidDisappear(_ animated: Bool){
        self.timer!.invalidate()
         super.viewDidDisappear(animated)
+        let isUserLogin = UserDefaults.standard.bool(forKey: "isUserLogin")
+        //isUserLogin = true
+        if !(isUserLogin) {
+            self.performSegue(withIdentifier: "endLog", sender: self)
+            
+        }
     }
     @objc
     func update(){
@@ -60,8 +69,8 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = mesTableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell") as! MessageTableViewCell
-        cell.pictureLabel.backgroundColor = UIColor.black
-        cell.pictureLabel.layer.cornerRadius = 20
+        cell.pictureLabel.backgroundColor = UIColor.gray
+        cell.pictureLabel.layer.cornerRadius = 10
         cell.idLabel.text = message.response[indexPath.row].senderName
         cell.messageLabel.text = message.response[indexPath.row].body
         return cell
@@ -75,8 +84,9 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
             destination.fullText = message.response[(mesTableView.indexPathForSelectedRow?.row)!].body
         }
     }
+   
     func downloadJSON(completed: @escaping () -> ()){
-        let url = URL( string: "http://25.54.246.29:4567/getMessages?token=fe059be107aa357b5d6d19829a4a6953")
+        let url = URL( string: "http://192.168.43.113:4567/getMessages?token=\(UserDefaults.standard.string(forKey: "token")!)")
         URLSession.shared.dataTask(with: url!){(data, response, err) in
             guard let data = data else { return }
             do{

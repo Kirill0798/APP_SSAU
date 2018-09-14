@@ -23,9 +23,19 @@ class RegistrationViewController: UIViewController {
     
 
     @IBAction func ready(_ sender: Any) {
+        if (LoginLabel.text?.isEmpty)! || (PasswordLabel.text?.isEmpty)! || (number.text?.isEmpty)!{
+            displayMyAlertMes(userMessage: "Проверьте: заполнены ли все поля")
+        } else{
         downloadJSON {
             print("ok")
+            }
         }
+    }
+    func displayMyAlertMes(userMessage: String){
+       let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "oк", style: .default, handler: nil)
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
     }
     @IBOutlet weak var LoginLabel: UITextField!
     @IBOutlet weak var PasswordLabel: UITextField!
@@ -67,8 +77,8 @@ class RegistrationViewController: UIViewController {
     func downloadJSON(completed: @escaping () -> ()){
         var myBirthday: String = "\(yearD.text!)-\(monthD.text!)-\(dayD.text!)"
         let encMyGender = myGender.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
-       print(encMyGender!)
-        var myString: String = "http://192.168.43.89:4567/registration?type=student&gender=\(encMyGender!)&birthday=\(myBirthday)&group_proforg=\(myGroupProforg)&group_president=\(myGroupPresident)&group_manager=\(myGroupManager)&login=\(LoginLabel.text!)&password=\(PasswordLabel.text!)&phone_number=\(number.text!)"
+       
+        var myString: String = "http://192.168.43.113:4567/registration?type=student&gender=\(encMyGender!)&birthday=\(myBirthday)&group_proforg=\(myGroupProforg)&group_president=\(myGroupPresident)&group_manager=\(myGroupManager)&login=\(LoginLabel.text!)&password=\(PasswordLabel.text!)&phone_number=\(number.text!)"
          print(myString)
         let url = URL(string: myString)
        
@@ -87,25 +97,47 @@ class RegistrationViewController: UIViewController {
                 print("error", jsonErr)
             }
             }.resume()
-        if CoreDataHandler.saveHandleObject(login: self.student.login,
-                                            password: self.student.password,
-                                            gender: self.student.gender,
-                                            birthday: self.student.birthday,
-                                            groupManager: Int32(self.student.groupManager),
-                                            groupProforg: Int32(self.student.groupProforg),
-                                            groupPresident: Int32(self.student.groupPresident),
-                                            token: self.student.token,
-                                            firstName: self.student.firstName,
-                                            middleName: self.student.middleName,
-                                            lastName: self.student.firstName,
-                                            phoneNumber: self.student.phoneNumber,
-                                            studyGroup: self.student.group.number){
-            self.user = CoreDataHandler.fetchObject()
-            for i in self.user!{
-                print(self.user)
-                print("ВСЕ СОХРАНИЛОСЬ")
-            }
+//        if CoreDataHandler.saveHandleObject(login: self.student.login,
+//                                            password: self.student.password,
+//                                            gender: self.student.gender,
+//                                            birthday: self.student.birthday,
+//                                            groupManager: Int32(self.student.groupManager),
+//                                            groupProforg: Int32(self.student.groupProforg),
+//                                            groupPresident: Int32(self.student.groupPresident),
+//                                            token: self.student.token,
+//                                            firstName: self.student.firstName,
+//                                            middleName: self.student.middleName,
+//                                            lastName: self.student.firstName,
+//                                            phoneNumber: self.student.phoneNumber,
+//                                            studyGroup: self.student.group.number){
+//            self.user = CoreDataHandler.fetchObject()
+//            for i in self.user!{
+//                print(self.user)
+//                print("ВСЕ СОХРАНИЛОСЬ")
+//            }
+//        }
+        UserDefaults.standard.set(self.student.login, forKey: "login")
+        UserDefaults.standard.set(self.student.password, forKey: "password")
+        UserDefaults.standard.set(self.student.gender, forKey: "gender")
+        UserDefaults.standard.set(self.student.birthday, forKey: "birthday")
+        UserDefaults.standard.set(self.student.groupManager, forKey: "groupManager")
+        UserDefaults.standard.set(self.student.groupProforg, forKey: "groupProforg")
+        UserDefaults.standard.set(self.student.groupPresident, forKey: "groupPresident")
+        UserDefaults.standard.set(self.student.token, forKey: "token")
+        UserDefaults.standard.set(self.student.firstName, forKey: "firstName")
+        UserDefaults.standard.set(self.student.middleName, forKey: "middleName")
+        UserDefaults.standard.set(self.student.lastName, forKey: "lastName")
+        UserDefaults.standard.set(self.student.phoneNumber, forKey: "phoneNumber")
+        UserDefaults.standard.set(self.student.group.number, forKey: "studyGroup")
+        UserDefaults.standard.synchronize()
+        
+        let myAlert = UIAlertController(title: "Alert", message: "Регистрация прошла успешно", preferredStyle: .alert)
+        let okAction = UIAlertAction(title:"oк", style: .default){ action in
+            self.dismiss(animated: true, completion: nil)
         }
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
+        
     }
 
 }

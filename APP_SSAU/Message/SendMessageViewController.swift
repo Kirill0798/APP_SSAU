@@ -25,9 +25,10 @@ class SendMessageViewController: UIViewController {
     }
     func addMessage(newMes: String){
         let encodedText = newMes.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
-        let myString = "http://25.54.246.29:4567/sendMessage?recipients=6209-010302D&body=\(encodedText!)&token=fe059be107aa357b5d6d19829a4a6953"
-        let url = URL(string: myString)
-        URLSession.shared.dataTask(with: url!){(data, response, err) in
+        let myString = "http://192.168.43.113:4567/sendMessage?recipients=\(UserDefaults.standard.string(forKey: "studyGroup")!)&body=\(encodedText!)&token=\(UserDefaults.standard.string(forKey: "token")!)"
+        print(myString)
+        guard let url = URL(string: myString) else {return}
+        URLSession.shared.dataTask(with: url){(data, response, err) in
             guard let data = data else { return }
             do{
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
